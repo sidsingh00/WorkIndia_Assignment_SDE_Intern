@@ -133,6 +133,37 @@ A RESTful API for a **Railway Management System** like IRCTC, built with Express
 ]
 ```
 
+
+#### Admin Route
+
+1.  Add a new train
+
+    - HTTP Method :- POST
+    - Endpoint :- http://localhost:3000/admin/addTrain
+    - Request Body:
+
+```bash
+{
+    "message": "Trains added successfully",
+    "trainIds": [
+        {
+            "trainNumber": "88288",
+            "trainId": 94
+        }
+    ]
+  }
+```
+
+         * Headers :
+             * x-api-key: Admin API key which is stored in .env
+
+2. Update seat availability
+
+   - HTTP Method :- PUT
+   - Endpoint :- http://localhost:3000/admin/update-seats/50
+   - Request Body:
+
+
 ## Security
 
 - JWT-based authentication for protected routes
@@ -176,7 +207,7 @@ Description: Check if the user exist's
 
 ---
 
-#### 3. User Lgin
+#### 3. User Login
 Description: Login the person
 
 ![Login User](./Images/Login.png)
@@ -185,6 +216,7 @@ Description: Login the person
 
 
 #### 2. Train Availability
+Description: This demonstrates how the GET /user/availability API is used to check train availability.
 
 ![Train Availability Screenshot](./Images/Availability_1.png)
 ![Train Availability Screenshot](./Images/Availability_2.png)
