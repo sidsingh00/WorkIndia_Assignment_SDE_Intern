@@ -165,21 +165,21 @@ The booking system uses PostgreSQL's transaction isolation and row-level locking
 #### 1. Database Creation
 Description: Creation of the Table for the IRCTC management system in MYSQL
 
-![Database Creation Screenshot](./WorkIndia_Assignment/Images/DATABASE_1.png)
-![Database Creation Screenshot](./WorkIndia_Assignment/Images/DATABASE_2.png)
+![Database Creation Screenshot](./Images/DATABASE_1.png)
+![Database Creation Screenshot](./Images/DATABASE_2.png)
 
 
 #### 2. User Registration
 Description: Check if the user exist's
 
-![Registration User](./WorkIndia_Assignment/Images/Register.png)
+![Registration User](./Images/Register.png)
 
 ---
 
 #### 3. User Lgin
 Description: Login the person
 
-![Login User](./WorkIndia_Assignment/Images/Login.png)
+![Login User](./Images/Login.png)
 
 ---
 
