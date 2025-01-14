@@ -186,8 +186,8 @@ Description: Login the person
 
 #### 2. Train Availability
 
-![Train Availability Screenshot](./WorkIndia_Assignment/Images/Availability_1.png)
-![Train Availability Screenshot](./WorkIndia_Assignment/Images/Availability_2.png)
+![Train Availability Screenshot](./Images/Availability_1.png)
+![Train Availability Screenshot](./Images/Availability_2.png)
 
 
 Run tests using:
