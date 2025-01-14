@@ -20,7 +20,7 @@ A RESTful API for a **Railway Management System** like IRCTC, built with Express
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/sidsingh00/WorkIndia_Assignment_SDE_Intern
    cd railway-management-system
    ```
 
