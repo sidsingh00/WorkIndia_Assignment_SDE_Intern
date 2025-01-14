@@ -127,7 +127,7 @@ A RESTful API for a **Railway Management System** like IRCTC, built with Express
         "booking_id": 17,
         "number_of_seats": 50,
         "train_number": "123123",
-        "source": "Sadalpur",
+        "source": "Bhopal",
         "destination": "Delhi"
     }
 ]
