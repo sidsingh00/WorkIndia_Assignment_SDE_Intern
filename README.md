@@ -93,26 +93,53 @@ A RESTful API for a **Railway Management System** like IRCTC, built with Express
    - Body:
 ```bash
 - POST `/api/auth/login` - Login and get JWT token
+{
+  "email": "sidharth@gmail.com",
+  "password": "sidharth1234"
+}
 ```
-### Trains
+### Trains availability
 
 - GET `/api/trains/availability` - Get trains between stations
    - HTTP Method :- GET
-   - Endpoint :- http://localhost:3000/user/availability?source=Ranchi&destination=Delhi
+   - Endpoint :- http://localhost:3000/user/availability?source=Delhi&destination=Mumbai
    - Query Parameters
      - source: Source station (e.g., "Bhopal")
      - destination: Destination station (e.g., "Delhi")
    - Response:
 
-- POST `/api/trains` - Add a new train (Admin only)
+```bash
+GET
+{
+  "available": true,
+  "availableTrainCount": 1,
+  "trains": [
+    {
+      "trainNumber": "12345",
+      "availableSeats": 96
+    }
+  ]
+}
+```
 
 
-### Bookings
+### Bookings Seat
 
 - POST `/api/bookings` - Book a seat
     - HTTP Method :- POST
     - Endpoint :- http://localhost:3000/user/book
     - Request Body:
+ 
+```bash
+
+Authorization : Bearer <Token>
+POST
+{
+  "trainId": 2,
+  "seatsToBook": 3
+}
+```
+
 
 - GET `/api/bookings/:id` - Get booking details
 
@@ -122,15 +149,25 @@ A RESTful API for a **Railway Management System** like IRCTC, built with Express
     - Response:
 
 ```bash
+GET
+
 [
-    {
-        "booking_id": 17,
-        "number_of_seats": 50,
-        "train_number": "123123",
-        "source": "Bhopal",
-        "destination": "Delhi"
-    }
+  {
+    "booking_id": 1,
+    "number_of_seats": 2,
+    "train_number": "12345",
+    "source": "Delhi",
+    "destination": "Mumbai"
+  },
+  {
+    "booking_id": 2,
+    "number_of_seats": 1,
+    "train_number": "54321",
+    "source": "Kolkata",
+    "destination": "Chennai"
+  }
 ]
+
 ```
 
 
@@ -143,25 +180,36 @@ A RESTful API for a **Railway Management System** like IRCTC, built with Express
     - Request Body:
 
 ```bash
-{
-    "message": "Trains added successfully",
-    "trainIds": [
-        {
-            "trainNumber": "88288",
-            "trainId": 94
-        }
-    ]
+   POST
+  {
+    "trainNumber": "136",
+    "source": "Delhi",
+    "destination": "Mumbai",
+    "totalSeats": 150
   }
+
 ```
 
          * Headers :
-             * x-api-key: Admin API key which is stored in .env
+             * Admin-api-key: Admin API key which is stored in .env
+             so here we use the secret key because of the admin authentication as the admin can add some value or not
 
 2. Update seat availability
 
    - HTTP Method :- PUT
-   - Endpoint :- http://localhost:3000/admin/update-seats/50
+   - Endpoint :- http://localhost:3000/admin/update-seats/90
    - Request Body:
+         * Headers :
+             * Admin-api-key: Admin API key which is stored in .env
+  
+```bash
+   PUT
+  {
+  "totalSeats": 200,
+  "availableSeats": 150
+ }
+
+```
 
 
 ## Security
